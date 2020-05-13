@@ -106,6 +106,8 @@ public interface IQuiz {
 
 abstract public class QuizSource : MonoBehaviour, IQuizSource {
     // Quiz source which is a component and can be installed
+    [Tooltip("Number of returned choices")]
+    public int ChoicesCount = 3;
     public string GetLocalizedString(string id, params object[] args) {
         if( !registry ) {
             Debug.Log("No registry!");
@@ -122,15 +124,31 @@ abstract public class QuizSource : MonoBehaviour, IQuizSource {
         // Some simplest quiz
         QuizSource m_source;
         int m_id;
+        string m_question;
+        string m_answer;
+        string[] m_choices;
         public Quiz(int id, QuizSource source) {
             m_id = id;
             m_source = source;
+            m_question = m_source.question(m_id);
+            m_answer = m_source.answer(m_id);
+            List<string> answers = new List<string>();
+            answers.Add(m_answer);
+            for(int i=0; answers.Count < m_source.ChoicesCount; i++) {
+                string a = m_source.answer(m_source.random_id());
+                if( !answers.Contains(a) ) {
+                    answers.Add(a);
+                }
+            }
+            answers.Sort( (string x, string y) => Random.value > 0.5 ? 1:-1 );
+            m_choices = new string[answers.Count];
+            answers.CopyTo(m_choices);
         }
         public int id { get { return m_id; } }
         public IQuizSource source { get { return m_source; } }
-        public string question { get {return m_source.question(id); } }
-        public string answer { get {return m_source.answer(id); } }
-        public string[] choices { get {return m_source.choices(id); } }
+        public string question { get {return m_question; } }
+        public string answer { get {return m_answer; } }
+        public string[] choices { get {return m_choices; } }
     }
     public IQuiz create_quiz(int id) {
         return new Quiz(id, this);
@@ -141,5 +159,4 @@ abstract public class QuizSource : MonoBehaviour, IQuizSource {
     public abstract int random_id();
     public abstract string question(int id);
     public abstract string answer(int id);
-    public abstract string[] choices(int id);
 }

@@ -133,8 +133,9 @@ GameObject:
   - component: {fileID: 25649154}
   - component: {fileID: 25649153}
   - component: {fileID: 25649152}
+  - component: {fileID: 25649155}
   - component: {fileID: 25649151}
-  - component: {fileID: 25649150}
+  - component: {fileID: 25649156}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -162,18 +163,6 @@ RectTransform:
   m_AnchoredPosition: {x: -240, y: -225}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &25649150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25649148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e759b656d8e308e0bfbda258419b6cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &25649151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,15 +172,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 25649148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b4e13357d05b060e881ce3a8b2da0d2, type: 3}
+  m_Script: {fileID: 11500000, guid: d51a49840b41892cbad2c3191eac578f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  categories:
-  - 
-  - 
-  - 
-  - 
-  - 
+  digits: 1
 --- !u!114 &25649152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,8 +219,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 25649151}
-        m_MethodName: GenerateQuiz
+      - m_Target: {fileID: 25649155}
+        m_MethodName: DebugRandomQuiz
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -283,6 +267,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25649148}
   m_CullTransparentMesh: 0
+--- !u!114 &25649155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25649148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53bca9075c50b87f2850cb27ac8aa7cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &25649156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25649148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51a49840b41892cbad2c3191eac578f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  digits: 2
 --- !u!1 &289321001
 GameObject:
   m_ObjectHideFlags: 0

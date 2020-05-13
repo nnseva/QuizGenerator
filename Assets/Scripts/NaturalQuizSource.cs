@@ -27,14 +27,6 @@ abstract public class NaturalQuizSource : QuizSource {
     public override string answer(int id) {
         return GetLocalizedString("{0}", action(a(id), b(id)));
     }
-    public override string[] choices(int id) {
-        List<string> answers = new List<string>();
-        answers.Add(this.answer(id));
-        answers.Add(this.answer(random_id()));
-        answers.Add(this.answer(random_id()));
-        answers.Sort( (string x, string y) => Random.value > 0.5 ? 1:-1 );
-        return answers.ToArray();
-    }
     abstract public int action(int a, int b);
     abstract public string action_sign { get; } // Action sign: +,-,*,:
     abstract public string action_name { get; } // Action name like "addition"
