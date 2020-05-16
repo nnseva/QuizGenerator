@@ -16,23 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 8c72308f2001496be8d890b7c30c86b7
-  m_SerializeEntries:
-  - m_GUID: 4df85e85e2d8f344fa6f9f2945bf110a
-    m_Address: quiz_ru
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ru
-    - Preload
-    m_mainAssetType: UnityEngine.Localization.Tables.StringTable, Unity.Localization,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - m_GUID: f99cedfe3eec421a497302a65db8b731
-    m_Address: quiz_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    - Preload
-    m_mainAssetType: UnityEngine.Localization.Tables.StringTable, Unity.Localization,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: f8b083efbaa8f51bbbf8e4df4fcb0796, type: 2}
   m_SchemaSet:

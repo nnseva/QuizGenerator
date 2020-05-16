@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 379eb77d79a8dfc69a97b31172e4ff68
-  m_SerializeEntries:
-  - m_GUID: 891a26f75917ab247891dc15a74dea23
-    m_Address: quiz Shared Data
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_mainAssetType: 
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: f8b083efbaa8f51bbbf8e4df4fcb0796, type: 2}
   m_SchemaSet:

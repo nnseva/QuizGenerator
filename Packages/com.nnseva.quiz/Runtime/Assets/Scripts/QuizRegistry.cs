@@ -10,14 +10,12 @@ public class QuizRegistry : MonoBehaviour {
     StringTable m_translations;
     public string GetLocalizedString(string id, params object[] args) {
         if( !m_translations ) {
-            Debug.Log("No translation!");
             return string.Format(id, args);
         }
         return m_translations.GetEntry(id).GetLocalizedString(args);
     }
     IEnumerator Start() {
         yield return LocalizationSettings.InitializationOperation;
-        
         AsyncOperationHandle handle = LocalizationSettings.Instance.GetStringDatabase().GetTableAsync("quiz");
         yield return handle;
         m_translations = (StringTable) handle.Result;
